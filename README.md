@@ -117,8 +117,10 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Calculator
-- More Forms
+- Add reducers and actions.
+- Use Redux in React components.
+- Connect to API.
+- Styling
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
