@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+
+.navbar {
+  padding: 2%;
+}
+
+.nav-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav-item {
+  text-decoration: none;
+}
