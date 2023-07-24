@@ -23,7 +23,7 @@ const AddBook = () => {
   };
 
   return (
-    <div>
+    <div className="add-book">
       <h1>ADD NEW BOOK</h1>
       <form>
         <input

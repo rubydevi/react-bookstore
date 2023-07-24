@@ -22,3 +22,26 @@
 .nav-item {
   text-decoration: none;
 }
+
+/* Book List UL */
+
+.book-list {
+  padding: 3%;
+  list-style: none;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.add-book {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 3%;
+}

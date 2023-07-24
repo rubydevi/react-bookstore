@@ -25,7 +25,7 @@ const Books = () => {
 
   return (
     <>
-      <ul>
+      <ul className="book-list">
         {books.map((book) => (
           <Book
             key={book.item_id}
