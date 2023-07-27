@@ -13,15 +13,25 @@ const Books = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <ul className="book-list">
+          <div className="loader" />
+        </ul>
+        <AddBook />
+      </>
+    );
   }
 
   if (error) {
     return (
-      <div>
-        There is an issue:
-        {error}
-      </div>
+      <>
+        <ul className="book-list">
+          There is an issue:
+          {error}
+        </ul>
+        <AddBook />
+      </>
     );
   }
 

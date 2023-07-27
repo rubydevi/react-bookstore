@@ -1,26 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Navbar Styles */
-
-.navbar {
-  padding: 2%;
+body {
+  padding: 4%;
+  background-color: #f5f6fa;
 }
 
-.nav-list {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
+#root {
+  margin: 0;
+  padding: 0 0 8%;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgb(0 0 0 / 5%);
+  background-color: #fafafa;
 }
 
-.nav-item {
-  text-decoration: none;
+.loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  border-top-color: #307bbe;
+  animation: spin 0.6s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Book List UL */
