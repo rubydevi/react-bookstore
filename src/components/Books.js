@@ -1,41 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
 import AddBook from './AddBook';
-import { addBook, removeBook } from '../redux/books/booksSlice';
+import { fetchBooks } from '../redux/books/booksSlice';
 
 const Books = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books.books);
+  const { books, isLoading, error } = useSelector((state) => state.books);
 
-  const handleAddBook = (title, author) => {
-    const newItemId = `item${Math.random().toString(36).substr(2, 9)}`;
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
 
-    dispatch(addBook({
-      item_id: newItemId,
-      title,
-      author,
-      category: 'Fiction',
-    }));
-  };
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  const handleRemoveBook = (itemId) => {
-    dispatch(removeBook(itemId));
-  };
+  if (error) {
+    return (
+      <div>
+        There is an issue:
+        {error}
+      </div>
+    );
+  }
 
   return (
     <>
       <ul className="book-list">
-        {books.map((book) => (
+        {Object.entries(books).map(([itemId, book]) => (
           <Book
-            key={book.item_id}
-            bookName={book.title}
-            author={book.author}
-            onRemove={() => handleRemoveBook(book.item_id)}
+            key={itemId}
+            bookName={book[0].title}
+            author={book[0].author}
+            itemId={itemId}
           />
         ))}
       </ul>
-      <AddBook onAddBook={handleAddBook} />
+      <AddBook />
     </>
   );
 };
