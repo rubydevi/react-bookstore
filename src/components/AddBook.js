@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Button from './Button';
 import { addBookAsync } from '../redux/books/booksSlice';
+import '../styles/AddBook.css';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -29,8 +30,8 @@ const AddBook = () => {
 
   return (
     <div className="add-book">
-      <h1>ADD NEW BOOK</h1>
-      <form>
+      <h2 className="add-title">ADD NEW BOOK</h2>
+      <form className="form-content">
         <input
           type="text"
           placeholder="Book title"
@@ -43,7 +44,7 @@ const AddBook = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <Button type="submit" label="Add Book" onClick={handleAddBook} />
+        <Button className="form-button" type="submit" label="Add Book" onClick={handleAddBook} />
       </form>
     </div>
   );

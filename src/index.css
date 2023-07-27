@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 4%;
+  background-color: #f5f6fa;
+}
+
+#root {
+  margin: 0;
+  padding: 0 0 8%;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgb(0 0 0 / 5%);
+  background-color: #fafafa;
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  border-top-color: #307bbe;
+  animation: spin 0.6s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  padding: 4%;
+}

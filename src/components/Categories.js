@@ -1,7 +1,7 @@
 const Categories = () => (
-  <div>
-    Coming soon...
-  </div>
+  <h1>
+    Under construction
+  </h1>
 );
 
 export default Categories;
