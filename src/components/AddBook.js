@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import Button from './Button';
-import { addBook } from '../redux/books/booksSlice';
+import { addBookAsync } from '../redux/books/booksSlice';
 
 const AddBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleAddBook = () => {
-    const newItemId = `item${Math.random().toString(36).substr(2, 9)}`;
+  const handleAddBook = (e) => {
+    e.preventDefault();
 
-    dispatch(addBook({
-      item_id: newItemId,
-      title,
-      author,
-      category: 'Fiction',
-    }));
+    const newItemId = uuidv4();
 
-    setTitle('');
-    setAuthor('');
+    if (title && author) {
+      dispatch(addBookAsync({
+        item_id: newItemId,
+        title,
+        author,
+        category: 'Fantasy',
+      }));
+
+      setTitle('');
+      setAuthor('');
+    }
   };
 
   return (
@@ -35,9 +40,10 @@ const AddBook = () => {
         <input
           type="text"
           placeholder="Author"
+          value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <Button label="Add Book" onClick={handleAddBook} />
+        <Button type="submit" label="Add Book" onClick={handleAddBook} />
       </form>
     </div>
   );
