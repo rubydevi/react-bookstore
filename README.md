@@ -117,9 +117,9 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Use Redux in React components.
-- Connect to API.
-- Styling
+- CRUD operations.
+- Dynamic Progress.
+- User Management.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
